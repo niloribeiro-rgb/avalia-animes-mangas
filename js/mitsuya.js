@@ -1,4 +1,4 @@
-let imagem = ["jui.png", "bomi.png", "dre.png", "love.png", "mori.png", "blu.png", "dii.png", "juu.png", "mob.png", "kimi.png"];
+let imagem = ["img/jui.png", "img/bomi.png", "img/dre.png", "img/love.png", "img/mori.png", "img/blu.png", "img/dii.png", "img/juu.png", "img/mob.png", "img/kimi.png"];
 let texto = ["24 Volumes", "12 Volumes", "12 Volumes", "152 Capitulos","4 Volumes", "1 Temporada", "2 Temporadas", "3 Temporadas", "3 Temporadas", "3 Temporadas"
  ];
 let peq = ["Na vingança, a vítima também se torna um monstro.",
