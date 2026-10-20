@@ -1,0 +1,43 @@
+.V{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.susa img{
+    width: 500px;
+    height: 450px;
+    box-shadow: 5px 5px 5px #f05555;
+    border-radius: 6px;
+}
+
+.susa:hover{
+ transform: scale(1.05);
+}
+
+li{
+    color: aliceblue;
+    font-size: 50px;
+   line-height: 60px;
+}
+.container{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;  
+  
+}
+h2{
+    color: rgb(24, 102, 247);
+    font-size: 35px;
+}
+.divEscura{
+    background-color: rgba(0, 0, 0, 0.445);
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
