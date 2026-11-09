@@ -1,0 +1,62 @@
+[
+  {
+    "nome": "Juujika No Rokunin",
+    "Imagem": "img/jui.png",
+    "Volumes": "24 Volumes",
+    "Texto": "Na vingança, a vítima também se torna um monstro."
+  },
+  {
+    "nome": " Temporada de Flores",
+    "Imagem": "img/bomi.png",
+    "Volumes": "12 Volumes",
+    "Texto": "Até as flores mais belas florescem depois da dor."
+  },
+  {
+    "nome": "Dreaming Freedom ",
+    "Imagem": "img/dre.png",
+    "Volumes": "12 Volumes",
+    "Texto": "Às vezes, a liberdade também se torna uma prisão."
+  },
+  {
+    "nome": "For My Abandoned Love",
+    "Imagem": "img/love.png",
+    "Volumes": "152 Capitulos",
+    "Texto": "Até um coração abandonado merece um novo amor."
+  },
+  {
+    "nome": "A Caminho de Encontrar a Mamãe",
+    "Imagem": "img/mori.png",
+    "Volumes": "4 Volumes",
+    "Texto": "Mesmo perdido, o amor sempre encontra o caminho de casa."
+  },
+  {
+    "nome": "Blue Period",
+    "Imagem": "img/blu.png",
+    "Volumes": "1 Temporada",
+    "Texto": "Às vezes, precisamos nos perder para descobrir quem realmente somos."
+  },
+  {
+    "nome": "Diários de uma Apotecária",
+    "Imagem": "img/dii.png",
+    "Volumes": "2 Temporadas",
+    "Texto": "Entre venenos e segredos, a curiosidade revela a verdade."
+  },
+  {
+    "nome": "Jujutsu Kaisen",
+    "Imagem": "img/juu.png",
+    "Volumes": "3 Temporadas",
+    "Texto": "Às vezes, lutar contra maldições é mais fácil do que enfrentar a própria dor."
+  },
+  {
+    "nome": "Mob Psycho 100",
+    "Imagem": "img/mob.png",
+    "Volumes": "3 Temporadas",
+    "Texto": "Ser forte não significa esconder o que sentimos, mas aprender a aceitar quem somos."
+  },
+  {
+    "nome": "Kimi ni Todoke",
+    "Imagem": "img/kimi.png",
+    "Volumes": "3 Temporadas",
+    "Texto": "Ser forte não significa esconder o que sentimos, mas aprender a aceitar quem somos."
+  }
+]

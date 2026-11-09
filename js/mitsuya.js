@@ -1,37 +1,105 @@
-let imagem = ["img/jui.png", "img/bomi.png", "img/dre.png", "img/love.png", "img/mori.png", "img/blu.png", "img/dii.png", "img/juu.png", "img/mob.png", "img/kimi.png"];
-let texto = ["24 Volumes", "12 Volumes", "12 Volumes", "152 Capitulos","4 Volumes", "1 Temporada", "2 Temporadas", "3 Temporadas", "3 Temporadas", "3 Temporadas"
- ];
-let peq = ["Na vingança, a vítima também se torna um monstro.",
-     "Até as flores mais belas florescem depois da dor.",
-      "Às vezes, a liberdade também se torna uma prisão.",
-    "Até um coração abandonado merece um novo amor.",
-"Mesmo perdido, o amor sempre encontra o caminho de casa.", 
-"Às vezes, precisamos nos perder para descobrir quem realmente somos.",
-"Entre venenos e segredos, a curiosidade revela a verdade.",
-"Às vezes, lutar contra maldições é mais fácil do que enfrentar a própria dor.", 
-"Ser forte não significa esconder o que sentimos, mas aprender a aceitar quem somos.", 
-"Ser forte não significa esconder o que sentimos, mas aprender a aceitar quem somos."]
-;
-let preco = ["Juujika No Rokunin", " Temporada de Flores", "Dreaming Freedom ", "For My Abandoned Love", "A Caminho de Encontrar a Mamãe", "Blue Period", "Diários de uma Apotecária", "Jujutsu Kaisen", "Mob Psycho 100", "Kimi ni Todoke"
-];
+const inputPesquisar = document.querySelector(`#inputPesquisar`)
+let cardsContainer = document.querySelector('.cardsContainer');
+
+let card = ["ola", "algo", "outro"]
+let animes = []
+
+dadosArmazedodosApi()
+async function dadosArmazedodosApi() {
+
+    let dados
+    try {
+        const response = await fetch('json/animesEMangas.json')
+        dados = await response.json()
+
+        if (!response) {
+            alert(`erro: ${response.status} - ${response.statusText}`)
+        }
+
+        //  alert(dados[2].nome)
+        //  alert(dados.length)
+
+    }
+    catch (erro) {
+        console.error(error)
+    }
+
+    pucharJson()
+    async function pucharJson() {
+        // alert(dados[1].nome)
+        // alert(dados[2].nome)
+        //alert(dados.length)
+        inserirCards()
+
+    }
+
+    inserirCard()
+    function inserirCard() {
+
+        let html = ""
+        for (let i = 0; i < dados.length; i++) {
+            html += `<div class="conteiner" id="conteiner">`
+            html += `<img src="${dados[i].Imagem}" alt="brasas">`
+            html += ` <p class="texto-pequeno">${dados[i].Volumes}</p>`
+            html += `<p class="Preço">${dados[i].nome}</p>`
+            html += `<p class="pequeno">${dados[i].Texto}</p> </div>`
+            cardsContainer.innerHTML = html
+        }
+
+    }
+
+    function inserirCards() {
+        // let {dados} = dadosArmazedodosApi()
+        let html = ""
+        for (let i = 0; i < dados.length; i++) {
+            html += `<p>${dados[i].nome}</p>`
+            // alert(dados[i].nome)
+        }
+        cardsContainer.innerHTML = html
+    }
+
+    inputPesquisar.addEventListener('input', (event) => {
+        pesquisarAnimes()
+    })
 
 
+    function pesquisarAnimes() {
+        let textoPesquisa = inputPesquisar.value
+        //alert(textoPesquisa)
+        let posicao = []
+        for (let i = 0; i < dados.length; i++) {
+            if (dados[i].nome.includes(textoPesquisa) == true) {
+                posicao.push(i)
+            }
+        }
+        // alert("psicoes: " + posicao)
+        inserirCardspesquisado(posicao)
+    }
 
-let i 
-function criarCard() {
-    let conta = document.querySelector('.conta');
+    function inserirCardspesquisado(posicao) {
 
-    for (i = 0; i < texto.length; i++) {
-        conta.innerHTML += `<div class="conteiner" id="conteiner">
-            <img src="${imagem[i]}" alt="brasas">
-            <p class="texto-pequeno">${texto[i]}</p>
-             <p class="Preço">${preco[i]}</p>
-            <p class="pequeno">${peq[i]}</p>
-           
+        if (posicao == "") {
+            cardsContainer.innerHTML = `<p>Nenhum encontrado</p>`
+            return
+        }
 
-           
+        let html = ""
+        let indexPosicao = 0
+        for (let i = 0; i < dados.length; i++) {
+            if (i == posicao[indexPosicao]) {
+                indexPosicao++
+                html += `<div class="conteiner" id="conteiner">`
+                html += `<img src="${dados[i].Imagem}" alt="brasas">`
+                html += ` <p class="texto-pequeno">${dados[i].Volumes}</p>`
+                html += `<p class="Preço">${dados[i].nome}</p>`
+                html += `<p class="pequeno">${dados[i].Texto}</p> </div>`
+                cardsContainer.innerHTML = html
+            }
+        }
 
-        </div>`
+        cardsContainer.innerHTML = html
+
     }
 }
-criarCard()
+
+

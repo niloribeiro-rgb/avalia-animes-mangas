@@ -4,10 +4,12 @@ const cardsContainer = document.querySelector(`.cardsContainer`)
 let card = ["ola", "algo", "outro"]
 let animes = []
 
+dadosArmazedodosApi() 
 async function dadosArmazedodosApi() {
+    
     let dados
     try {
-        const response = await fetch('json/cards.json')
+        const response = await fetch('json/animesEMangas.json')
         dados = await response.json()
 
         if (!response) {
@@ -21,63 +23,62 @@ async function dadosArmazedodosApi() {
     catch (erro) {
         console.error(error)
     }
-    return dados
-}
-pucharJson()
-async function pucharJson() {
-    animes = await dadosArmazedodosApi()
-    alert(animes[1].nome)
-    alert(animes[2].nome)
-    alert(animes.length)
-    inserirCards()
 
-}
+    pucharJson()
+    async function pucharJson() {
+       // alert(dados[1].nome)
+       // alert(dados[2].nome)
+        //alert(dados.length)
+        inserirCards()
 
-
-function inserirCards() {
-    // let {dados} = dadosArmazedodosApi()
-    let html = ""
-    for (let i = 0; i < animes.length; i++) {
-        html += `<p>${animes[i]}</p>`
-        alert(animes[i])
     }
-    cardsContainer.innerHTML = html
-}
-
-inputPesquisar.addEventListener('input', (event) => {
-    pesquisarAnimes()
-})
 
 
-function pesquisarAnimes() {
-    let textoPesquisa = inputPesquisar.value
-
-    let posicao = []
-    for (let i = 0; i < animes.length; i++) {
-        if (animes[i].includes(textoPesquisa) == true) {
-            posicao.push(i)
+    function inserirCards() {
+        // let {dados} = dadosArmazedodosApi()
+        let html = ""
+        for (let i = 0; i < dados.length; i++) {
+            html += `<p>${dados[i].nome}</p>`
+           // alert(dados[i].nome)
         }
-    }
-    // alert("psicoes: " + posicao)
-    inserirCardspesquisado(posicao)
-}
-
-function inserirCardspesquisado(posicao) {
-
-    if (posicao == "") {
-        cardsContainer.innerHTML = `<p>Nenhum encontrado</p>`
-        return
+        cardsContainer.innerHTML = html
     }
 
-    let html = ""
-    let indexPosicao = 0
-    for (let i = 0; i < animes.length; i++) {
-        if (i == posicao[indexPosicao]) {
-            indexPosicao++
-            html += `<p>${animes[i]}</p>`
+    inputPesquisar.addEventListener('input', (event) => {
+        pesquisarAnimes()
+    })
+
+
+    function pesquisarAnimes() {
+        let textoPesquisa = inputPesquisar.value
+        //alert(textoPesquisa)
+        let posicao = []
+        for (let i = 0; i < dados.length; i++) {
+            if (dados[i].nome.includes(textoPesquisa) == true) {
+                posicao.push(i)
+            }
         }
+        // alert("psicoes: " + posicao)
+        inserirCardspesquisado(posicao)
     }
 
-    cardsContainer.innerHTML = html
+    function inserirCardspesquisado(posicao) {
 
+        if (posicao == "") {
+            cardsContainer.innerHTML = `<p>Nenhum encontrado</p>`
+            return
+        }
+
+        let html = ""
+        let indexPosicao = 0
+        for (let i = 0; i < dados.length; i++) {
+            if (i == posicao[indexPosicao]) {
+                indexPosicao++
+                html += `<p>${dados[i].nome}</p>`
+            }
+        }
+
+        cardsContainer.innerHTML = html
+
+    }
 }
