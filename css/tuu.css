@@ -9,7 +9,17 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.containerInputPequisa {
+    width: auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.containerInputPequisa input{
+    padding: 5px;
+}
 
 .conteiner {
     padding-left: 10px;
