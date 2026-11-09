@@ -9,7 +9,7 @@ async function dadosArmazedodosApi() {
 
     let dados
     try {
-        const response = await fetch('json/animesEMangas.json')
+        const response = await fetch('../json/animesEMangas.json')
         dados = await response.json()
 
         if (!response) {
@@ -39,7 +39,7 @@ async function dadosArmazedodosApi() {
         let html = ""
         for (let i = 0; i < dados.length; i++) {
             html += `<div class="conteiner" id="conteiner">`
-            html += `<img src="${dados[i].Imagem}" alt="brasas">`
+            html += `<img src="../${dados[i].Imagem}" alt="brasas">`
             html += ` <p class="texto-pequeno">${dados[i].Volumes}</p>`
             html += `<p class="Preço">${dados[i].nome}</p>`
             html += `<p class="pequeno">${dados[i].Texto}</p> </div>`
@@ -48,15 +48,6 @@ async function dadosArmazedodosApi() {
 
     }
 
-    function inserirCards() {
-        // let {dados} = dadosArmazedodosApi()
-        let html = ""
-        for (let i = 0; i < dados.length; i++) {
-            html += `<p>${dados[i].nome}</p>`
-            // alert(dados[i].nome)
-        }
-        cardsContainer.innerHTML = html
-    }
 
     inputPesquisar.addEventListener('input', (event) => {
         pesquisarAnimes()
@@ -89,7 +80,7 @@ async function dadosArmazedodosApi() {
             if (i == posicao[indexPosicao]) {
                 indexPosicao++
                 html += `<div class="conteiner" id="conteiner">`
-                html += `<img src="${dados[i].Imagem}" alt="brasas">`
+                html += `<img src="../${dados[i].Imagem}" alt="brasas">`
                 html += ` <p class="texto-pequeno">${dados[i].Volumes}</p>`
                 html += `<p class="Preço">${dados[i].nome}</p>`
                 html += `<p class="pequeno">${dados[i].Texto}</p> </div>`

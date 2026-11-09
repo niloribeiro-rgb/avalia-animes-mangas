@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #FAF2EA;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
@@ -9,37 +9,43 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.conteiner{
-   padding-left: 10px;
-    background-color:rgb(18, 83, 126) ;
+
+
+.conteiner {
+    padding-left: 10px;
+    background-color: rgb(18, 83, 126);
     width: 300px;
     height: 490px;
     box-shadow: 3px 3px 3px rgb(223, 156, 156);
     margin: 15px;
     margin-bottom: 50px;
-    
+
 }
-.conteiner:hover{
+
+.conteiner:hover {
     transform: scale(1.05);
 }
-.conta{
+
+.conta {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
 
 }
- .conta img{
+
+.conta img {
     width: 250px;
     border-radius: 3px;
-    box-shadow: 3px 3px 3px  #231712;
+    box-shadow: 3px 3px 3px #231712;
     display: flex;
     justify-content: center;
     padding-left: 15px;
     padding-top: 30px;
     height: 270px;
 }
-.texto-pequeno{
+
+.texto-pequeno {
     font-size: 20px;
     margin-top: 10px;
     display: flex;
@@ -47,7 +53,8 @@ body{
     color: #F7EBE1;
 
 }
-.pequeno{
+
+.pequeno {
     font-size: 13px;
     color: #F7EBE1;
     margin-top: 10px;
@@ -55,12 +62,13 @@ body{
     justify-content: right;
     margin-left: 10px;
     margin-bottom: 8px;
-    
+
 }
-.Preço{
+
+.Preço {
     font-size: 25px;
     color: rgb(151, 52, 27);
-   margin-top: 7px;
+    margin-top: 7px;
     display: flex;
     justify-content: left;
     margin-left: 7px;
